@@ -8,13 +8,11 @@ services:
         volumes:
         - ./Nginx/logs:/var/log/nginx
         ports:
-        - '5000:80'
+        - '80:80'
 
     server:
         build:
             context: ./server
-        ports:
-            - "8000:8000"
         container_name: "server"
         command: gunicorn -k uvicorn.workers.UvicornWorker main:app --bind 0.0.0.0:8000
         volumes:
