@@ -16,7 +16,7 @@ app.add_middleware(
 )
 
 @app.get("/api/index")
-async def roi_attr_detect():
+async def index():
     return JSONResponse(
             status_code=200,
             content='test'
